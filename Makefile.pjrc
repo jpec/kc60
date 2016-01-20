@@ -42,7 +42,7 @@
 TARGET = kc60_pjrc
 
 # Directory common source files exist
-TMK_DIR = ./tmk_core
+TMK_DIR = ./tmk_core/tmk_core
 
 # Directory keyboard dependent files exist
 TARGET_DIR = .
