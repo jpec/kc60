@@ -28,7 +28,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift     |
      * |-----------------------------------------------------------|
-     * |Fn1 |Gui |Alt |        SpaceFn         |Alt |Gui |App |BTN2|
+     * |Fn1 |Gui |Alt |        SpaceFn         |Alt |Gui |App |BTN3|
      * `-----------------------------------------------------------'
      */
     KEYMAP_ANSI(
@@ -36,7 +36,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TAB,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    LBRC, RBRC, BSLS, \
         LCTL, A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN, QUOT,       ENT,  \
         LSFT, Z,    X,    C,    V,    B,    N,    M,    COMM, DOT,  SLSH,             RSFT, \
-        FN1,  LGUI, LALT,             FN0,                          RALT, RGUI, APP,  BTN2),
+        FN1,  LGUI, LALT,             FN0,                          RALT, RGUI, APP,  BTN3),
 
     /* Layout 1: Function Layer
      * ,-----------------------------------------------------------.
