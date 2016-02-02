@@ -28,7 +28,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift     |
      * |-----------------------------------------------------------|
-     * |Fn1 |Gui |Alt |        SpaceFn         |Alt |Gui |App |BTN3|
+     * |Fn1 |Gui |Alt |        SpaceFn         |Alt |Gui |App |Ctrl|
      * `-----------------------------------------------------------'
      */
     KEYMAP_ANSI(
@@ -36,26 +36,26 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TAB,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    LBRC, RBRC, BSLS, \
         LCTL, A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN, QUOT,       ENT,  \
         LSFT, Z,    X,    C,    V,    B,    N,    M,    COMM, DOT,  SLSH,             RSFT, \
-        FN1,  LGUI, LALT,             FN0,                          RALT, RGUI, APP,  BTN3),
+        FN1,  LGUI, LALT,             FN0,                          RALT, RGUI, APP,  RCTL),
 
     /* Layout 1: Function Layer
      * ,-----------------------------------------------------------.
      * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Delete |
      * |-----------------------------------------------------------|
-     * |     |Prv|Ply|Nxt|   |   |PUp|Hom|Up |End|Psc|Slk|Pau|Ins  |
+     * |     |Prv|Ply|Nxt|Stp|   |Cal|PUp|Up |PDn|Psc|Slk|Pau|Ins  |
      * |-----------------------------------------------------------|
-     * |Caps  |Vl-|Mut|Vl+|   |   |PDn|Lef|Dow|Rig|   |   |PEnt    |
+     * |Caps  |Vl-|Mut|Vl+|   |   |Hom|Lef|Dow|Rig|End|Del|PEnt    |
      * |-----------------------------------------------------------|
-     * |        |   |   |   |   |   |   |Ly0|Ly1|Ly2|Ly3|          |
+     * |        |   |   |   |   |   |End|Ly0|Ly1|Ly2|Ly3|          |
      * |-----------------------------------------------------------|
      * |    |    |    |                        |    |    |    |    |
      * `-----------------------------------------------------------'
      */
     KEYMAP_ANSI(
         ESC,  F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10,  F11,  F12,  DEL,  \
-        TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, PGUP, HOME, UP,   END,  PSCR, SLCK, PAUS, INS,  \
-        CAPS, VOLD, MUTE, VOLU, TRNS, TRNS, PGDN, LEFT, DOWN, RGHT, TRNS, TRNS,       PENT, \
-        TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, FN3,  FN4,  FN5,  FN6,              TRNS, \
+        TRNS, MPRV, MPLY, MNXT, MSTP, TRNS, CALC, PGUP, UP,   PGDN, PSCR, SLCK, PAUS, INS,  \
+        CAPS, VOLD, MUTE, VOLU, TRNS, TRNS, HOME, LEFT, DOWN, RGHT, END,  DEL,        PENT, \
+        TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, END,  FN3,  FN4,  FN5,  FN6,              TRNS, \
         TRNS, TRNS, TRNS,             TRNS,                         TRNS, TRNS, TRNS, TRNS),
 };
 
