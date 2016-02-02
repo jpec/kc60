@@ -43,7 +43,7 @@ To build firmware binary hex file with a certain keymap just do `make` with `KEY
     |-----------------------------------------------------------|
     |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift     |
     |-----------------------------------------------------------|
-    |Fn1 |Gui |Alt |        SpaceFn         |Alt |Gui |App |BTN3|
+    |Fn1 |Gui |Alt |        SpaceFn         |Alt |Gui |App |Ctrl|
     `-----------------------------------------------------------'
 
 
@@ -51,11 +51,11 @@ To build firmware binary hex file with a certain keymap just do `make` with `KEY
     ,-----------------------------------------------------------.
     |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Delete |
     |-----------------------------------------------------------|
-    |     |Prv|Ply|Nxt|   |   |PUp|Hom|Up |End|Psc|Slk|Pau|Ins  |
+    |     |Prv|Ply|Nxt|Stp|   |Cal|PUp|Up |PDn|Psc|Slk|Pau|Ins  |
     |-----------------------------------------------------------|
-    |Caps  |Vl-|Mut|Vl+|   |   |PDn|Lef|Dow|Rig|   |   |PEnt    |
+    |Caps  |Vl-|Mut|Vl+|   |   |Hom|Lef|Dow|Rig|End|Del|PEnt    |
     |-----------------------------------------------------------|
-    |        |   |   |   |   |   |   |Ly0|Ly1|Ly2|Ly3|          |
+    |        |   |   |   |   |   |End|Ly0|Ly1|Ly2|Ly3|          |
     |-----------------------------------------------------------|
     |    |    |    |                        |    |    |    |    |
     `-----------------------------------------------------------'
