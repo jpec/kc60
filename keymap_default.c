@@ -46,7 +46,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |Caps  |Vl-|Mut|Vl+|   |   |Hom|Lef|Dow|Rig|End|   |PEnt    |
      * |-----------------------------------------------------------|
-     * |        |Prt|Cut|Cop|Pst|Cal|   |Ly0|Ly1|Ly2|Ly3|          |
+     * |        |Prt|Cut|Cop|Pst|Cal|   |   |   |   |   |          |
      * |-----------------------------------------------------------|
      * |    |    |    |                        |    |    |    |    |
      * `-----------------------------------------------------------'
@@ -55,7 +55,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ESC,  F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10,  F11,  F12,  DEL,  \
         TRNS, MPRV, MPLY, MNXT, MSTP, TRNS, TRNS, PGUP, UP,   PGDN, TRNS, SLCK, PAUS, INS,  \
         CAPS, VOLD, MUTE, VOLU, TRNS, TRNS, HOME, LEFT, DOWN, RGHT, END,  TRNS,       PENT, \
-        TRNS, PSCR, FN6,  FN7,  FN8,  CALC, TRNS, FN2,  FN3,  FN4,  FN5,              TRNS, \
+        TRNS, PSCR, FN2,  FN3,  FN4,  CALC, TRNS, TRNS, TRNS, TRNS, TRNS,              TRNS, \
         TRNS, TRNS, TRNS,             TRNS,                         TRNS, TRNS, TRNS, TRNS),
 };
 
@@ -65,11 +65,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM fn_actions[] = {
     [0] = ACTION_LAYER_TAP_KEY(1, KC_SPACE),    /* SpaceFn layout 1 */
     [1] = ACTION_LAYER_MOMENTARY(1),            /* Momentary layout 1 */
-    [2] = ACTION_LAYER_TOGGLE(0),               /* Set layout 0 */
-    [3] = ACTION_LAYER_TOGGLE(1),               /* Set layout 1 */
-    [4] = ACTION_LAYER_TOGGLE(2),               /* Set layout 2 (not used) */
-    [5] = ACTION_LAYER_TOGGLE(3),               /* Set layout 3 (not used) */
-    [6] = ACTION_MODS_KEY(MOD_LSFT, KC_DEL),    /* Cut  */
-    [7] = ACTION_MODS_KEY(MOD_LCTL, KC_INS),    /* Copy  */
-    [8] = ACTION_MODS_KEY(MOD_LSFT, KC_INS),    /* Paste */
+    [2] = ACTION_MODS_KEY(MOD_LSFT, KC_DEL),    /* Cut  */
+    [3] = ACTION_MODS_KEY(MOD_LCTL, KC_INS),    /* Copy  */
+    [4] = ACTION_MODS_KEY(MOD_LSFT, KC_INS),    /* Paste */
 };
