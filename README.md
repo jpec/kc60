@@ -59,3 +59,5 @@ To build firmware binary hex file with a certain keymap just do `make` with `KEY
      |-----------------------------------------------------------|
      |    |    |    |                        |    |    |    |    |
      `-----------------------------------------------------------'
+
+![openpkr.png](openpkr.png)
