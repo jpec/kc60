@@ -16,7 +16,7 @@ Use `make -f Makefile.pjrc` if you want to use PJRC stack but I find no reason t
 ## Program the keyboard
 Press the button on the back of the keyboard and execute:
 
-    $ sudo dfu-programmer atmega32u4 erase --force && sudo dfu-programmer atmega32u4 flash kc60_lufa.hex
+    $ sudo dfu-programmer atmega32u4 erase --force && sudo dfu-programmer atmega32u4 flash kc60_lufa.hex && sudo dfu-programmer atmega32u4 reset
 
 And replug your keyboard.
 
