@@ -53,9 +53,9 @@ To build firmware binary hex file with a certain keymap just do `make` with `KEY
      |-----------------------------------------------------------|
      |     |Prv|Ply|Nxt|Stp|   |   |PUp|Up |PDn|   |Slk|Pau|Ins  |
      |-----------------------------------------------------------|
-     |Caps  |Vl-|Mut|Vl+|   |   |Hom|Lef|Dow|Rig|End|   |PEnt    |
+     |      |Vl-|Mut|Vl+|   |   |Hom|Lef|Dow|Rig|End|   |PEnt    |
      |-----------------------------------------------------------|
-     |        |Prt|Cut|Cop|Pst|Cal|   |   |   |   |   |          |
+     |        |Prt|Cut|Cop|Pst|Cal|   |   |   |   |   |CapsLock  |
      |-----------------------------------------------------------|
      |    |    |    |                        |    |    |    |    |
      `-----------------------------------------------------------'

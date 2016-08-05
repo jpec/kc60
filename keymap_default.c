@@ -44,9 +44,9 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |     |Prv|Ply|Nxt|Stp|   |   |PUp|Up |PDn|   |Slk|Pau|Ins  |
      * |-----------------------------------------------------------|
-     * |Caps  |Vl-|Mut|Vl+|   |   |Hom|Lef|Dow|Rig|End|   |PEnt    |
+     * |      |Vl-|Mut|Vl+|   |   |Hom|Lef|Dow|Rig|End|   |PEnt    |
      * |-----------------------------------------------------------|
-     * |        |Prt|Cut|Cop|Pst|Cal|   |   |   |   |   |          |
+     * |        |Prt|Cut|Cop|Pst|Cal|   |   |   |   |   |CapsLock  |
      * |-----------------------------------------------------------|
      * |    |    |    |                        |    |    |    |    |
      * `-----------------------------------------------------------'
@@ -54,8 +54,8 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP_ANSI(
         ESC,  F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10,  F11,  F12,  DEL,  \
         TRNS, MPRV, MPLY, MNXT, MSTP, TRNS, TRNS, PGUP, UP,   PGDN, TRNS, SLCK, PAUS, INS,  \
-        CAPS, VOLD, MUTE, VOLU, TRNS, TRNS, HOME, LEFT, DOWN, RGHT, END,  TRNS,       PENT, \
-        TRNS, PSCR, FN2,  FN3,  FN4,  CALC, TRNS, TRNS, TRNS, TRNS, TRNS,              TRNS, \
+        TRNS, VOLD, MUTE, VOLU, TRNS, TRNS, HOME, LEFT, DOWN, RGHT, END,  TRNS,       PENT, \
+        TRNS, PSCR, FN2,  FN3,  FN4,  CALC, TRNS, TRNS, TRNS, TRNS, TRNS,             CAPS, \
         TRNS, TRNS, TRNS,             TRNS,                         TRNS, TRNS, TRNS, TRNS),
 };
 
