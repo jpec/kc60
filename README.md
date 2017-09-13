@@ -9,6 +9,7 @@ DIY compact keyboard by Massdrop.
 ## Build
 Move to this directory then just run `make` like:
 
+    $ git submodule update tmk_core
     $ make
 
 Use `make -f Makefile.pjrc` if you want to use PJRC stack but I find no reason to do so now.
@@ -16,7 +17,7 @@ Use `make -f Makefile.pjrc` if you want to use PJRC stack but I find no reason t
 ## Program the keyboard
 Press the button on the back of the keyboard and execute:
 
-    $ sudo dfu-programmer atmega32u4 erase --force && sudo dfu-programmer atmega32u4 flash kc60_lufa.hex && sudo dfu-programmer atmega32u4 reset
+    $ ./flash.sh
 
 And replug your keyboard.
 
