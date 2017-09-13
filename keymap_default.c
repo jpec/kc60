@@ -48,7 +48,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |        |Prt|Cut|Cop|Pst|Cal|   |   |   |   |   |CapsLock  |
      * |-----------------------------------------------------------|
-     * |    |    |    |                        |    |    |    |    |
+     * |    |    |    |                        |    |    |    |PAst|
      * `-----------------------------------------------------------'
      */
     KEYMAP_ANSI(
@@ -56,7 +56,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS, MPRV, MPLY, MNXT, MSTP, TRNS, TRNS, PGUP, UP,   PGDN, TRNS, SLCK, PAUS, INS,  \
         TRNS, VOLD, MUTE, VOLU, TRNS, TRNS, HOME, LEFT, DOWN, RGHT, END,  TRNS,       PENT, \
         TRNS, PSCR, FN2,  FN3,  FN4,  CALC, TRNS, TRNS, TRNS, TRNS, TRNS,             CAPS, \
-        TRNS, TRNS, TRNS,             TRNS,                         TRNS, TRNS, TRNS, TRNS),
+        TRNS, TRNS, TRNS,             TRNS,                         TRNS, TRNS, TRNS, PAST),
 };
 
 /*
