@@ -28,37 +28,8 @@ To build firmware binary hex file with a certain keymap just do `make` with `KEY
 
     $ make KEYMAP=<name>
 
+### List of keymaps
 
-### 1  Default Keymap
+[keymap_default.c](keymap_default.c) is a keymap designed by Julien Pecqueur.
 
-[keymap_default.c](keymap_default.c) is a SpaceFn keymap designed by Julien Pecqueur.
-
-
-#### 1.0 Default layer
-    ,-----------------------------------------------------------.
-    |`  |  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|Backsp |
-    |-----------------------------------------------------------|
-    |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|    \|
-    |-----------------------------------------------------------|
-    |Ctrl  |  A|  S|  D|  F|  G|  H|  J|  K|  L|  ;|  '|Return  |
-    |-----------------------------------------------------------|
-    |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift     |
-    |-----------------------------------------------------------|
-    |Fn1 |Gui |Alt |        SpaceFn         |Alt |Gui |App |Ctrl|
-    `-----------------------------------------------------------'
-
-
-#### 1.1 Function layer
-     ,-----------------------------------------------------------.
-     |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Delete |
-     |-----------------------------------------------------------|
-     |     |Prv|Ply|Nxt|Stp|   |   |PUp|Up |PDn|   |Slk|Pau|Ins  |
-     |-----------------------------------------------------------|
-     |      |Vl-|Mut|Vl+|   |   |Hom|Lef|Dow|Rig|End|   |PEnt    |
-     |-----------------------------------------------------------|
-     |        |Prt|Cut|Cop|Pst|Cal|   |   |   |   |   |CapsLock  |
-     |-----------------------------------------------------------|
-     |    |    |    |                        |    |    |    |    |
-     `-----------------------------------------------------------'
-
-![openpkr.png](openpkr.png)
+[keymap_spacefn.c](keymap_spacefn.c) is a SpaceFn keymap designed by Julien Pecqueur.
