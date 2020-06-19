@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "keymap.h"
 
 
-/* GH60 keymap definition macro
+/* KC60 keymap definition macro
  * K2C, K31 and  K3C are extra keys for ISO
  */
 #define KEYMAP( \
