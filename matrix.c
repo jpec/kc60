@@ -25,13 +25,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "print.h"
 #include "debug.h"
 #include "util.h"
+#include "timer.h"
 #include "matrix.h"
 
 
 #ifndef DEBOUNCE
-#   define DEBOUNCE	5
+#   define DEBOUNCE 5
 #endif
-static uint8_t debouncing = DEBOUNCE;
+static bool debouncing = false;
+static uint16_t debouncing_time = 0;
+
 
 /* matrix state(1:on, 0:off) */
 static matrix_row_t matrix[MATRIX_ROWS];
@@ -42,18 +45,6 @@ static void init_cols(void);
 static void unselect_rows(void);
 static void select_row(uint8_t row);
 
-
-inline
-uint8_t matrix_rows(void)
-{
-    return MATRIX_ROWS;
-}
-
-inline
-uint8_t matrix_cols(void)
-{
-    return MATRIX_COLS;
-}
 
 void matrix_init(void)
 {
@@ -76,41 +67,27 @@ uint8_t matrix_scan(void)
 {
     for (uint8_t i = 0; i < MATRIX_ROWS; i++) {
         select_row(i);
-        _delay_us(30);  // without this wait read unstable value.
+        _delay_us(1);  // delay for settling
         matrix_row_t cols = read_cols();
         if (matrix_debouncing[i] != cols) {
-            matrix_debouncing[i] = cols;
             if (debouncing) {
-                debug("bounce!: "); debug_hex(debouncing); debug("\n");
+                dprintf("bounce: %d %d@%02X\n", timer_elapsed(debouncing_time), i, matrix_debouncing[i]^cols);
             }
-            debouncing = DEBOUNCE;
+            matrix_debouncing[i] = cols;
+            debouncing = true;
+            debouncing_time = timer_read();
         }
         unselect_rows();
     }
 
-    if (debouncing) {
-        if (--debouncing) {
-            _delay_ms(1);
-        } else {
-            for (uint8_t i = 0; i < MATRIX_ROWS; i++) {
-                matrix[i] = matrix_debouncing[i];
-            }
+    if (debouncing && timer_elapsed(debouncing_time) >= DEBOUNCE) {
+        for (uint8_t i = 0; i < MATRIX_ROWS; i++) {
+            matrix[i] = matrix_debouncing[i];
         }
+        debouncing = false;
     }
 
     return 1;
-}
-
-bool matrix_is_modified(void)
-{
-    if (debouncing) return false;
-    return true;
-}
-
-inline
-bool matrix_is_on(uint8_t row, uint8_t col)
-{
-    return (matrix[row] & ((matrix_row_t)1<<col));
 }
 
 inline
@@ -119,33 +96,12 @@ matrix_row_t matrix_get_row(uint8_t row)
     return matrix[row];
 }
 
-void matrix_print(void)
-{
-    print("\nr/c 0123456789ABCDEF\n");
-    for (uint8_t row = 0; row < MATRIX_ROWS; row++) {
-        phex(row); print(": ");
-        pbin_reverse16(matrix_get_row(row));
-        print("\n");
-    }
-}
-
-uint8_t matrix_key_count(void)
-{
-    uint8_t count = 0;
-    for (uint8_t i = 0; i < MATRIX_ROWS; i++) {
-        count += bitpop16(matrix[i]);
-    }
-    return count;
-}
-
 /* Column pin configuration
  * col: 0   1   2   3   4   5   6   7   8   9   10  11  12  13
- * pin: F1  F0  E6  D7  D6  D4  C7  C6  B7  B5  B4  B3  B1  B0  (Rev.BLE)
+ * pin: F1  F0  E6  D7  D6  D4  C7  C6  B7  B5  B4  B3  B1  B0
  */
 static void  init_cols(void)
 {
-
-    // Input with pull-up(DDR:0, PORT:1)
     DDRF  &= ~(1<<PF1 | 1<<PF0);
     PORTF |=  (1<<PF1 | 1<<PF0);
     DDRE  &= ~(1<<PE6);
@@ -156,7 +112,6 @@ static void  init_cols(void)
     PORTC |=  (1<<PC7 | 1<<PC6);
     DDRB  &= ~(1<<PB7 | 1<<PB5 | 1<<PB4 | 1<<PB3 | 1<<PB1 | 1<<PB0);
     PORTB |=  (1<<PB7 | 1<<PB5 | 1<<PB4 | 1<<PB3 | 1<<PB1 | 1<<PB0);
-
 }
 
 static matrix_row_t read_cols(void)
@@ -183,17 +138,14 @@ static matrix_row_t read_cols(void)
  */
 static void unselect_rows(void)
 {
-    // Hi-Z(DDR:0, PORT:0) to unselect
     DDRD  &= ~(1<<PD0 | 1<<PD1 | 1<<PD5);
     PORTD &= ~(1<<PD0 | 1<<PD1 | 1<<PD5);
-
     DDRF  &= ~(1<<PF6 | 1<<PF7);
     PORTF &= ~(1<<PF6 | 1<<PF7);
 }
 
 static void select_row(uint8_t row)
 {
-    // Output low(DDR:1, PORT:0) to select
     switch (row) {
         case 0:
             DDRD  |= (1<<0);

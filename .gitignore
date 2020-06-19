@@ -1,0 +1,9 @@
+/*.hex
+/*.eep
+/*.cof
+/*.elf
+/*.map
+/*.sym
+/*.lss
+/.dep
+/obj_kc60_lufa
